@@ -1,32 +1,44 @@
 import Link from 'next/link'  
 import Image from 'next/image' 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
 
 const Header = () => {
    const [langVector, setLangVector] = useState(false);
+   
+   const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    function watchScroll() {
+      window.addEventListener("scroll", () => {setScrollY(window.pageYOffset) });
+    }
+    watchScroll();
+  });
+ 
 
   return (
      <header> 
-        <div className="__header">
+        <div className={`__header ${scrollY > 10 ? 'change-header' : ''}`}>
            <div className="container">
             <div className="__header-child">
                <div className="__header-left">
-                  <Link href="/" className="logo">
+               <Link href="/" className="logo"> 
+                  {scrollY > 10 ? 
                      <Image 
-                           src={require('../../assets/img/logo1.png')}  
-                           width={146}
-                           alt="img" 
-                           height={73}
-                        />
-                  </Link>
-                  {/* <div className="logo">
+                        src={require('../../assets/img/logo2.png')}  
+                        alt="img"
+                        width={146}
+                        height={73}
+                     />
+                  :
                      <Image 
-                              src={require('../../assets/img/logo1.png')}  
-                              alt="img"
-                              width={146}
-                              height={73}
-                           />
-                  </div> */}
+                        src={require('../../assets/img/logo1.png')}  
+                        width={146}
+                        alt="img" 
+                        height={73}
+                     />
+                  } 
+               </Link>
                   <nav className='__nav'>
                      <ul>
                         <li className='active-link'>
