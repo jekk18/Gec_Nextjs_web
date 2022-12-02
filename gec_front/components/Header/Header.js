@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react'
+import { useRouter } from "next/router"
 import Link from 'next/link'  
 import Image from 'next/image' 
-import { useState, useEffect } from 'react'
+
 
 
 const Header = () => {
@@ -14,7 +16,9 @@ const Header = () => {
     }
     watchScroll();
   });
- 
+
+
+  const router = useRouter();
 
   return (
      <header> 
@@ -27,41 +31,37 @@ const Header = () => {
                      <Image 
                         src={require('../../assets/img/logo2.png')}  
                         alt="img"
-                        width={146}
-                        height={73}
                      />
                   :
                      <Image 
-                        src={require('../../assets/img/logo1.png')}  
-                        width={146}
-                        alt="img" 
-                        height={73}
+                        src={require('../../assets/img/logo1.png')}   
+                        alt="img"  
                      />
                   } 
                </Link>
                   <nav className='__nav'>
                      <ul>
-                        <li className='active-link'>
+                        <li className={router.pathname == "/services" ? "active-link" : ""}>
                            <Link href="/services" className='nav-link'>
                               Services
                            </Link>
                         </li>
-                        <li >
+                        <li className={router.pathname == "/portfolio" ? "active-link" : ""}>
                            <Link href="/portfolio" className='nav-link'>
                               Portfolio
                            </Link>
                         </li>
-                        <li>
+                        <li className={router.pathname == "/insights" ? "active-link" : ""}>
                            <Link href="/insights" className='nav-link'>
                               Insights
                            </Link>
                         </li>
-                        <li>
+                        <li className={router.pathname == "/about" ? "active-link" : ""}>
                            <Link href="/about" className='nav-link'>
                               About Us
                            </Link>
                         </li>
-                        <li>
+                        <li className={router.pathname == "/career" ? "active-link" : ""}>
                            <Link href="/career" className='nav-link'>
                               Career
                            </Link>

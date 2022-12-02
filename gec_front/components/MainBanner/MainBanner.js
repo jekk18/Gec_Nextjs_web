@@ -49,7 +49,7 @@ const MainBanner = () => {
           <div className="item" >
             <div className="banner-item"> 
               <div className="__img-side">
-                  <Image src={require("../../assets/img/banner1.png")}alt="image" />
+                  <Image src={require("../../assets/img/banner1.png")} alt="image"/>
                   <div className="blur-img-background"></div>
               </div>
               <div className="img-text-side-absolute">
@@ -67,9 +67,11 @@ const MainBanner = () => {
             </div>
           </div> 
           {/* <div className="item">
-            <iframe width="100%" height="500px"
-  src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&amp;modestbranding=1&amp;controls=0&amp;mute=1&amp;rel=0&amp;loop=1&amp;playlist=tgbNymZ7vqY" >
-  </iframe> 
+            <div className="video-item">
+              <iframe width="100%" height="100%"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&amp;modestbranding=1&amp;controls=0&amp;mute=1&amp;rel=0&amp;loop=1&amp;playlist=tgbNymZ7vqY" >
+              </iframe> 
+            </div>
           </div> */}
           <div className="item">
             <div className="banner-item"> 
@@ -86,7 +88,7 @@ const MainBanner = () => {
                   </span>
                   <Link href="#">
                     read more
-                  </Link>
+                  </Link> 
                 </div>
               </div>
             </div>
