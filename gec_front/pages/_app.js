@@ -4,6 +4,7 @@ import Meta from '../components/Meta/Meta';
 import '../styles/globals.css'; 
 import '../styles/fonts.css';
 import '../styles/bootstrap.css';   
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <Component {...pageProps} />
     </Layout>
+    <Footer />
     </>
   )
 }

@@ -24,6 +24,7 @@ a {
   --see-all-font: 16px;
   --title-font:20px;
   --read-more-font: 20px;
+  --banners-text-font: 22px;
 }
  
 /* Header */
@@ -696,5 +697,52 @@ a {
 }
  /* NewsAndPublicationSection */
 
+/* Banners */
+.banners-box-section{
+  padding: 100px 0 50px 0;
+}
+.banners{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; 
+}
+.banners a{
+  width: calc((100% / 3) - 20px); 
+}
+.banner-bacgkround-image{ 
+  width: 100%;
+  height: 112px; 
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.banners a:hover .banner-bacgkround-image{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.banner-bacgkround-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner-bacgkround-image h2{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
+  font-size: var(--banners-text-font);
+  font-weight: bold;
+  line-height: 36px; 
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-family: 'FiraGO';
+  overflow: hidden;
+}
 
-
+/* Banners */

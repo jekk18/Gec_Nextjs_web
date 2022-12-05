@@ -31,7 +31,7 @@ const Puzzle = () => {
   const [DnD, setDnD] = useState(initialDnDState)
   const [isHiddenItemsOrderSet, setIsHiddenItemsOrderSet] = useState(false)
   const onDragStart = e => {
-    console.log('start')
+    // console.log('start')
     const draggedFrom = Number(e.currentTarget.dataset.position);
     setDnD(Dnd=> { return {
       ...DnD,
@@ -42,9 +42,9 @@ const Puzzle = () => {
     // e.dataTransfer.effectAllowed = 'copyMove';
   // e.dataTransfer.setData('text/html', e.target.innerHTML);
   }
-  const onDragOver= e=>{}
+  const onDragOver = e =>{}
   const onDragEnter = e => {
-    console.log('drag enter',DnD.draggedFrom)
+    // console.log('drag enter',DnD.draggedFrom)
     e.preventDefault()
     // let newList = DnD.originalOrder
     let newList = [...list]
@@ -77,14 +77,14 @@ const Puzzle = () => {
   return newList;})
      
   setDnD(DnD=> { 
-    console.log('draged to',draggedTo)
+    // console.log('draged to',draggedTo)
     return {
     ...DnD,
     draggedFrom: draggedTo,
   }})
   }
   const onDrop = e => {
-    console.log('drop')
+    // console.log('drop')
     // setList(DnD.updatedOrder)
     setDnD(DnD=> { return {
       ...DnD,
@@ -94,7 +94,7 @@ const Puzzle = () => {
     }})
   }
   const onDragLeave = e => {
-    console.log('drag leave')
+    // console.log('drag leave')
     // setDnD({
     //   ...DnD,
     //   // draggedTo: null
@@ -107,6 +107,7 @@ const Puzzle = () => {
       setIsHiddenItemsOrderSet(false)
     }
   }, [list])
+  
   return ( 
     <div className="width-puzzle" onMouseMove={(e)=>{
       if(DnD.isDragging)
@@ -127,7 +128,7 @@ const Puzzle = () => {
        ul li{  
         box-sizing: border-box; 
         text-align: center;
-        cursor: move;  
+        cursor: grab;  
         width: 258px;
         height: 258px;
        }
@@ -164,3 +165,5 @@ const Puzzle = () => {
 }
 
  export default Puzzle;
+ 
+ 

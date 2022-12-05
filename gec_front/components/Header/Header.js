@@ -19,7 +19,7 @@ const Header = () => {
 
 
   const router = useRouter();
-
+  
   return (
      <header> 
         <div className={`__header ${scrollY > 10 ? 'change-header' : ''}`}>

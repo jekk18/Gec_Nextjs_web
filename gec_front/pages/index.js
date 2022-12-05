@@ -4,6 +4,7 @@ import PuzzleSection from "../components/PuzzleSection";
 import ServicesSection from "../components/ServicesSection"; 
 import CaseSection from "../components/CaseSection";
 import NewsAndPublicationsSection from "../components/NewsAndPublications";
+import Banners from "../components/Banners";
 
 export default function Home() {
   return ( 
@@ -19,6 +20,9 @@ export default function Home() {
           </section>
           <section>
             <ServicesSection />
+          </section>
+          <section>
+            <Banners />
           </section>
           <section>
             <CaseSection />

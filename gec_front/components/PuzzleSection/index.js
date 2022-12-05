@@ -1,5 +1,5 @@
 import Puzzle from './Puzzle'
-import SectionTitle from '../SectionTitle'
+import SectionTitle from '../SectionTitle' 
 
 const PuzzleSection = () => {
   return (
@@ -21,7 +21,7 @@ const PuzzleSection = () => {
                 </div>
                 <div className="col-xxl-7 col-lg-6 col-md-6">
                     <div className="puzzle" >
-                        <Puzzle />
+                        <Puzzle /> 
                     </div>
                 </div>
             </div>
