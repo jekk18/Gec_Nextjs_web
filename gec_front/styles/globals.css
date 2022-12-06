@@ -22,9 +22,12 @@ a {
   --section-title: 26px; 
   --text-font: 20px;
   --see-all-font: 16px;
+  --show-all: 18px;
   --title-font:20px;
   --read-more-font: 20px;
   --banners-text-font: 22px;
+  --footer-links-font: 20px;
+  --business-asistant-title: 26px;
 }
  
 /* Header */
@@ -744,5 +747,387 @@ a {
   font-family: 'FiraGO';
   overflow: hidden;
 }
-
 /* Banners */
+
+/* Footer */
+  .footer{
+    padding: 100px 0 70px 0;
+    background-color: #1E2E38;
+    position: relative;
+    margin-top: 164px;
+  }
+  .footer-booking-now-box{
+    width: 1030px;
+    height: 155px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -4px 8px -7px rgb(0 0 0 / 10%);
+    padding-left: 50px;
+    position: absolute;
+    top: -116px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .booking-logo-left{
+    width: 77px;
+    height: 77px;
+  }
+  .booking-logo-left img{
+    width: 100%;
+    height: 100%;
+  }
+  .booking-text{
+    width: 271px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #163749;
+    font-family: 'FiraGO'; 
+    margin: 0;
+  }
+  .booking-btn{
+    padding: 10px 21px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 2px solid #163749;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'FiraGO'; 
+    color: #163749;
+    transition: 0.3s;
+  }
+  .booking-btn:hover{
+    background-color: #163749;
+    color: #fff;
+  }
+  .booking-right-logo{
+    margin-right: -1px;
+    margin-bottom: -16px;
+  }
+  .footer-box{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-logo{
+    width: 173px;
+    height: 85px;
+    margin-bottom: 60px;
+  }
+  .footer-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 60px;
+  }
+  .footer-link{
+    color: #fff;
+    font-size: var( --footer-links-font);
+    font-family: 'FiraGO'; 
+    transition: 0.3s;
+  }
+  .footer-link:hover{
+    color: #F15B30;
+  }
+  .footer-right-side{
+    display: flex; 
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .subscribe-box{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .subscribe-box h3{
+    width: 220px;
+    font-size: 15px;
+    font-weight: 600; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-family: 'FiraGO';
+    overflow: hidden;
+    color: #fff;
+  }
+  .subscribe-form{
+    position: relative;
+    width: 310px;
+  }
+  .subscribe-form input{
+    width: 100%;
+    height: 60px;
+    /* position: relative; */
+    font-size: 18px;
+    font-family: 'FiraGO';
+    color: #fff;
+    padding-left: 18px;
+    background: #5A6B76;
+    appearance: none;
+    border: none!important;
+    outline: none;
+  }
+  .subscribe-form input:focus-visible{
+    border: none;
+  }
+  .subscribe-form input::placeholder{
+    font-size: 18px;
+    color: #7A8F9C;
+    font-family: 'FiraGO';
+  }
+  .subscribe-form button{
+    background-color: transparent;
+    position: absolute;
+    right: 26px;
+    height: 60px;
+    border: none;
+    outline: none;
+    appearance: none;
+    text-decoration: underline;
+    text-transform: capitalize;
+    font-family: 'FiraGO';
+    font-size: 18px;
+    color: #fff;
+  }
+  .soc-box{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+  }
+  .soc-box h2{
+    font-size: 18px;
+    color: #fff;
+    font-family: 'FiraGO'; 
+    margin-right: 20px;
+    font-weight: 400;
+  }
+  .soc-icons{
+    display: flex;
+    gap: 28px;
+  }
+  .soc-icons a span svg path{
+    transition: 0.3s;
+  }
+  .soc-icons a:hover span svg path{ 
+     fill: #F15B30;
+  }
+  .soc-icons a:nth-child(2):hover span svg path:nth-child(2){
+    fill: rgb(30, 46, 56);
+  }
+/* Footer */
+/* Copyright */
+.__creat{
+  height: 70px;
+  border-top: 1px solid #385668;
+  background-color: #1E2E38;
+}
+.creat-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+.creat-box .left-list{
+  display: flex;
+  align-items: center;
+}
+.creat-box .left-list h1{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'FiraGO'; 
+  color: #fff;
+}
+.creat-box .left-list h1 .line__03{
+  background-color: #385668;
+  width: 1px;
+  height: 23px;
+  margin-right: 20px;
+}
+.creat-box .left-list h1:last-child .line__03{
+  width: 0;
+}
+#idea{
+  color: #fff;
+  font-size: 16px;
+  font-family: 'FiraGO'; 
+  font-weight: 500;
+}
+/* Copyright */
+
+/* Business Assistant */
+.business-assistant-box{
+  padding: 50px 0 100px 0;
+}
+.questions-number-box{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.title-box_1{
+  position: relative; 
+  width: 380px;
+}
+.title-box_1 .circle{ 
+  width: 118px;
+  height: 118px;
+  background: rgba(207, 87, 57, 0.15);
+  border-radius: 50%; 
+}
+
+.title-box_1 .title{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 24px;
+  width: 350px;
+  position: absolute;
+  top: 64%;
+  transform: translateY(-50%);
+}
+.title-box_1 .title h2{
+  font-size: var(--business-asistant-title);
+  font-weight: bold;
+  line-height: 36px;
+  color: #CF5739;
+  font-family: 'FiraGO'; 
+}
+.title-box_1 .title .question-num{
+  display: flex;
+  gap: 5px;
+}
+.question-num h4{
+  font-family: 'FiraGO'; 
+  font-size: 24px;
+  color: #000;
+  font-weight: 400;
+}
+.question-num  span{
+  font-family: 'FiraGO'; 
+  font-size: 24px;
+  color: #000;
+  font-weight: 400; 
+}
+.question-num  span._n_1{
+  color: #CF5739;
+}
+.questions-number-box .text-box_1{
+  font-size: var(--text-font);
+  font-weight: 400;
+  color: #1E2E38;
+  max-width: 642px;
+  height: 118px;
+  padding: 35px 0;
+  overflow: hidden;
+  line-height: 38px;
+  margin-left: 170px;
+  font-family: 'FiraGO';  
+}
+
+.choose-options-title{
+  font-size: var(--title-font);
+  font-weight: bold;
+  color: #1B1B1B;
+  font-family: 'FiraGO';  
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.choose-items-box{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-height: 194px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.open-choose-item-box{
+  max-height: 1000px;
+}
+.select-item{
+  padding: 25px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'FiraGO';  
+  color: #1B1B1B;
+  border: 2px solid #E1E1E1;
+  border-radius: 5px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.select-item:hover{
+  background: #CF5739;
+  color: #fff;
+}
+.select-buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  align-items: flex-end;
+}
+.left-show-all h3{
+  position: relative;
+  font-size: var(--show-all);
+  font-family: 'FiraGO';  
+  color: #000;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.left-show-all h3::before{
+  position: absolute;
+  content: "";
+  bottom: 1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000; 
+  transition: 0.3s;
+}
+.left-show-all h3:hover::before{
+  width: 100%;
+}
+.next-question-btn{
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+}
+.next-btn{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 13px 16px;
+  border-radius: 5px;
+  color: #fff;
+  background: #CF5739;
+  font-size: var(--show-all);
+  font-family: 'FiraGO';  
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 2px solid transparent;
+  color: #CF5739;
+  background: #fff;
+  border: 2px solid #CF5739;
+  pointer-events: none;
+}
+.next-btn:hover{
+  color: #fff;
+  background: #CF5739; 
+}
+ 
+.next-btn span svg path{
+  transition: 0.3s;
+  fill: #CF5739;
+}
+.next-btn:hover span svg path{
+  fill: #fff;
+}
+/* Business Assistant */

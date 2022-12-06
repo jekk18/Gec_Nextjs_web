@@ -1,10 +1,12 @@
 import Header from '../components/Header/Header';
 import Layout from '../components/Layout/Layout';
-import Meta from '../components/Meta/Meta';
+import Meta from '../components/Meta/Meta'; 
+import Footer from '../components/Footer';
+import Copyright from '../components/Copyright';
 import '../styles/globals.css'; 
 import '../styles/fonts.css';
 import '../styles/bootstrap.css';   
-import Footer from '../components/Footer';
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,6 +17,7 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
     </Layout>
     <Footer />
+    <Copyright />
     </>
   )
 }
