@@ -28,6 +28,7 @@ a {
   --banners-text-font: 22px;
   --footer-links-font: 20px;
   --business-asistant-title: 26px;
+  --prev-btn: 18px;
 }
  
 /* Header */
@@ -363,7 +364,7 @@ a {
   }
  /* Puzzle */
  .puzzleSection{
-  padding: 100px 0;
+  padding: 50px 0 100px 0;
  }
  .puzzle-left-text{
   padding-top: 60px;
@@ -964,8 +965,13 @@ a {
 
 /* Business Assistant */
 .business-assistant-box{
-  padding: 50px 0 100px 0;
+  padding: 50px 0;
+  overflow: hidden;
 }
+.__selector-boxes{
+  position: relative;
+}
+
 .questions-number-box{
   display: flex;
   align-items: center;
@@ -1041,6 +1047,7 @@ a {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
+
 .choose-items-box{
   display: flex;
   flex-wrap: wrap;
@@ -1066,6 +1073,7 @@ a {
 .select-item:hover{
   background: #CF5739;
   color: #fff;
+  border: 2px solid #CF5739;
 }
 .select-buttons{
   display: flex;
@@ -1122,12 +1130,126 @@ a {
   color: #fff;
   background: #CF5739; 
 }
- 
+.active-btn{
+  color: #fff;
+  background: #CF5739; 
+  pointer-events: initial;
+}
 .next-btn span svg path{
   transition: 0.3s;
   fill: #CF5739;
 }
-.next-btn:hover span svg path{
+.next-btn:hover span svg path,
+.active-btn span svg path{
   fill: #fff;
+}
+ 
+.previous{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--prev-btn);
+  font-family: 'FiraGO';  
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.previous:hover{
+  color: #049878;
+}
+.previous span svg path{
+  transition: 0.3s;
+}
+.previous:hover span svg path{
+  fill: #049878;
+}
+.btn-line-01{
+  width: 1px;
+  height: 40px;
+  background: #E1E1E1;
+}
+.next-question-btn_2{
+  align-items: center;
+}
+.apply-btn{
+  border: none;
+  padding: 0;
+  pointer-events: initial;
+}
+.apply-btn__{
+  border-radius: 5px;
+  color: #fff;
+  font-size: var(--prev-btn);
+  font-family: 'FiraGO';  
+  font-weight: bold;
+  background: #049878;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 67px;
+  border: none;
+  text-transform: capitalize; 
+}
+.check-active{
+  background: #CF5739;
+  color: #fff;
+  border: 2px solid #CF5739;
+}
+.__selector-box_02 .choose-items-box .select-item:hover,
+.__selector-box_02 .check-active{
+  background: #049878;
+  border: 2px solid #049878;
+}
+ 
+.__selector-box_01{ 
+  transition: 0.2s; 
+  background: #fff;
+}
+/* .open-selector-box .__selector-box_01{ 
+  opacity: 0;
+} */
+.__selector-box_02{
+  position: absolute;
+  top: 0;
+  /* left: 150%;  */
+  /* right: 0; */
+  transition: 0.3s;
+  background: #fff; 
+  /* opacity: 0;  */
+  /* width: 0; */
+}
+.open-selector-box .__selector-box_02{
+  animation: selector_B 1s ease;  
+  width: 100%;
+  /* opacity: 1; */
+}
+@keyframes selector_B{
+  0%{
+    left: 150%; 
+  }
+  100%{
+    left: 0; 
+    /* opacity: 1; */
+  }
+}
+.open-selector-box-2 .__selector-box_02{
+  /* display: none; */
+  width: 100%;
+  z-index: -1;
+}
+.open-selector-box-2 .__selector-box_01{
+  animation: selectorWidth 0.5s cubic-bezier(0.25, 0.1, 0.41, 0.5);
+}
+ 
+@keyframes selectorWidth{
+  0%{
+    transform: translateX(-150%); 
+  }
+  100%{
+    width: 100%;
+    /* opacity: 1;  */
+    transform: translateX(0); 
+  }
 }
 /* Business Assistant */
