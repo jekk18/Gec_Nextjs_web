@@ -965,7 +965,7 @@ a {
 
 /* Business Assistant */
 .business-assistant-box{
-  padding: 50px 0;
+  padding: 50px 0 40px 0;
   overflow: hidden;
 }
 .__selector-boxes{
@@ -1191,6 +1191,9 @@ a {
   border: none;
   text-transform: capitalize; 
 }
+.item-form-box{
+  padding-bottom: 10px;
+}
 .check-active{
   background: #CF5739;
   color: #fff;
@@ -1211,44 +1214,42 @@ a {
 } */
 .__selector-box_02{
   position: absolute;
-  top: 0;
-  /* left: 150%;  */
-  /* right: 0; */
-  transition: 0.3s;
-  background: #fff; 
-  /* opacity: 0;  */
-  /* width: 0; */
+  top: 0; 
+  left: 0;
+  transition: 3s;
+  background: #fff;  
 }
 .open-selector-box .__selector-box_02{
   animation: selector_B 1s ease;  
   width: 100%;
-  /* opacity: 1; */
+  /* z-index: -1; */ 
 }
 @keyframes selector_B{
   0%{
     left: 150%; 
   }
   100%{
-    left: 0; 
-    /* opacity: 1; */
+    left: 0;  
   }
 }
-.open-selector-box-2 .__selector-box_02{
-  /* display: none; */
+ 
+.open-selector-box-2 .__selector-box_01{
+  animation: selectorWidth 1s ease;
+  width: 100%;
+}
+.open-selector-box-2 .__selector-box_02{ 
   width: 100%;
   z-index: -1;
+  transition: 3s;
+  left: 0;
 }
-.open-selector-box-2 .__selector-box_01{
-  animation: selectorWidth 0.5s cubic-bezier(0.25, 0.1, 0.41, 0.5);
-}
- 
+
 @keyframes selectorWidth{
   0%{
     transform: translateX(-150%); 
   }
   100%{
-    width: 100%;
-    /* opacity: 1;  */
+    width: 100%; 
     transform: translateX(0); 
   }
 }

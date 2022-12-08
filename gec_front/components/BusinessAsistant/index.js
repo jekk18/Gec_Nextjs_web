@@ -10,26 +10,27 @@ const BusinessAsistant = () => {
   const [theArray, setTheArray] = useState([]);
 
   const handleShowItems = () => {
-    setShowItemsBox(true);
+    setShowItemsBox(!showItemsBox);
   } 
 
   const checkCount = (item, checkCountLength) => {
     if(checkCountLength){
       setCount(count+1)   
-      setTheArray([...theArray, item.currentTarget.title]);
-      console.log(theArray)
-      console.log('push')
+      const itemsArray = [...theArray, item.currentTarget.title];
+      setTheArray(itemsArray); 
+      console.log(itemsArray)
     }
     else { 
       setCount(count-1)  
       let clickedItem = item.currentTarget.title;  
-      let result = theArray.filter(el => el !== clickedItem)
-      console.log('remove') 
-      console.log(result)
-      setTheArray(result);
-    }
-    // console.log(theArray)
+      let result = theArray.filter(el => el !== clickedItem)  
+      setTheArray(result); 
+    } 
   }
+// useEffect(() => { 
+//   console.log(theArray)
+// },[theArray]) 
+
 const handleNextSelectBox = () => {
   setShowNextSelectBox(true);
   setShowPrevSelectBox(false)
@@ -37,14 +38,23 @@ const handleNextSelectBox = () => {
 const handleHideItems = () => {
   setShowNextSelectBox(false);
   setShowPrevSelectBox(true);
-}
+} 
+useEffect(() => { 
+    setShowNextSelectBox(false);
+    setShowPrevSelectBox(true); 
+},[])
+
+ 
+
+
   // const intentContainer = useRef();
    
   // useEffect(() => {
   //   console.log(intentContainer.current.childNodes.length) 
   // }, [])
-  return (
-    
+
+
+  return ( 
     <div className="business-assistant-box">
         <div className="container">
             {/* <SectionTitle titleText='Your business assistant' titleColor="#1E2E38"/>  */}
@@ -104,7 +114,7 @@ const handleHideItems = () => {
                       </div>
                     </div>
                 </div>
-                <div className="__selector-box_01 __selector-box_02">
+                <div className="__selector-box_02">
                     <SectionTitle titleText='Your business assistant' titleColor="#1E2E38" className="business_assistant-title"   /> 
                     <div className="questions-number-box">
                       <div className="title-box_1">
@@ -113,7 +123,7 @@ const handleHideItems = () => {
                           <h2 style={{color: '#049878'}}>Select Your Business Needs</h2>
                             <div className="question-num">
                               <h4>Question</h4>
-                              <span className='_n_1' style={{color: '#049878'}}>1</span>
+                              <span className='_n_1' style={{color: '#049878'}}>2</span>
                               <h4>Of</h4>
                               <span className='_n_2'>2</span>
                             </div>
