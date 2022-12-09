@@ -7,7 +7,7 @@
 //     }
 //   return <Layout>...</Layout>;
 // }
-import Layout from '../components/Layout/Layout';
+// import Layout from '../components/Layout/Layout';
 
 
 // export async function getServerSideProps(context) {

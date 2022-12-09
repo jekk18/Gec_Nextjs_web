@@ -166,9 +166,9 @@ useEffect(() => {
                               Previous Question
                             </div>
                             <div className="btn-line-01"></div>
-                            <button className='apply-btn__'  >
-                                  apply
-                              </button>
+                            <button className='apply-btn__'>
+                                apply
+                            </button>
                           </div>
                       </div>
                     </div>

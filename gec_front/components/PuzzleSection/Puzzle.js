@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react" 
 
-import img from '../../assets/img/puzzle1.png';
-import img1 from '../../assets/img/puzzle2.png';
-import img2 from '../../assets/img/puzzle3.png';
-import img3 from '../../assets/img/puzzle4.png';
-import img4 from '../../assets/img/puzzle6.png';
-import img5 from '../../assets/img/puzzle7.png';
+import img from '../../assets/img/1.jpg';
+import img1 from '../../assets/img/2.jpg';
+import img2 from '../../assets/img/3.jpg';
+import img3 from '../../assets/img/4.jpg';
+import img4 from '../../assets/img/5.jpg';
+import img5 from '../../assets/img/6.jpg';
 import Image from "next/image";
 
 
