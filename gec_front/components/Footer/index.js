@@ -47,7 +47,7 @@ const Footer = () => {
             <div className="col-xxl-4 col-lg-4 col-md-5 col-sm-12 footer-right-side">
               <div className="subscribe-box">
                 <h3>
-                  Enter your e-mail, so that you don't miss the news
+                  Enter your e-mail, so that you don&apos;t miss the news
                 </h3>
                 <form className="subscribe-form">
                   <input type="email" placeholder="E-Mail" />

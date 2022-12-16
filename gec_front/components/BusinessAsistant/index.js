@@ -18,7 +18,7 @@ const BusinessAsistant = () => {
       setCount(count+1)   
       const itemsArray = [...theArray, item.currentTarget.title];
       setTheArray(itemsArray); 
-      console.log(itemsArray)
+      // console.log(itemsArray)
     }
     else { 
       setCount(count-1)  

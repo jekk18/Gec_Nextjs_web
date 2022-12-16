@@ -502,6 +502,7 @@ a {
  }
  .cases-box{
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   width: 100%;
  }
@@ -537,7 +538,7 @@ a {
   font-family: 'FiraGO'; 
   color: #000;
   line-height: 32px;
-  height: 58px;
+  height: 59px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

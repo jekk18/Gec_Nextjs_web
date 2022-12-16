@@ -53,7 +53,7 @@ const NewsAndPublicationsSection = () => {
                     <Image src={require('../../assets/img/news2.png')}  alt="newsImg" />
                     <div className="indicator-title"> 
                         <div className="n_p-date"> 
-                        August 21, 2022
+                            August 21, 2022
                         </div>
                     </div>
                 </Link> 

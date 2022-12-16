@@ -1,13 +1,15 @@
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Slider from "react-slick"; 
  
-const MainBanner = () => {
+const MainBanner = (props) => {
+
 
   const sliderRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [sliderCount, setSliderCount] = useState(0);
   const settings = {
     dots: false,
     infinite: false,
@@ -42,63 +44,52 @@ const MainBanner = () => {
         
 
       <div className="banner-slider-relative">
-        <Slider ref={sliderRef} {...settings}
-        
-        >
-      
-          <div className="item" >
-            <div className="banner-item"> 
-              <div className="__img-side">
-                  <Image src={require("../../assets/img/banner1.png")} alt="image"/>
-                  <div className="blur-img-background"></div>
-              </div>
-              <div className="img-text-side-absolute">
-                 <div className="container">
-                  <span>
-                    GEC is an international business and management
-                    consulting company, implementing systemic
-                    business solutions to large enterprises
-                  </span>
-                  <Link href="#">
-                    read more
-                  </Link>
+        <Slider ref={sliderRef} {...settings} > 
+        {
+          props.bannersItem.map((item, i) => {  
+            useEffect(() => {
+              setSliderCount(++i);
+            }) 
+            if(item.bannerKey === '00'){ 
+              return (
+                  <div className="item" key={i}>
+                    <div className="video-item">
+                      <iframe width="100%" height="100%"
+                        src={item.bannerImg} >
+                      </iframe> 
+                    </div>
+                  </div>  
+                )
+            }else if(item.bannerKey === '01'){
+              return (
+                <div className="item" key={i}>
+                <div className="banner-item"> 
+                  <div className="__img-side">
+                      <Image src={item.bannerImg} alt="image"/>
+                      <div className="blur-img-background"></div>
+                  </div>
+                  <div className="img-text-side-absolute">
+                    <div className="container">
+                      <span>
+                      {item.bannerText}
+                      </span>
+                      <Link href={item.bannerLink}>
+                        read more
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div> 
-          {/* <div className="item">
-            <div className="video-item">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&amp;modestbranding=1&amp;controls=0&amp;mute=1&amp;rel=0&amp;loop=1&amp;playlist=tgbNymZ7vqY" >
-              </iframe> 
-            </div>
-          </div> */}
-          <div className="item">
-            <div className="banner-item"> 
-              <div className="__img-side">
-                  <Image src={require("../../assets/img/banner1.png")} alt="image"/>
-                  <div className="blur-img-background"></div>
-              </div>
-              <div className="img-text-side-absolute">
-                 <div className="container">
-                  <span>
-                    GEC is an international business and management
-                    consulting company, implementing systemic
-                    business solutions to large enterprises
-                  </span>
-                  <Link href="#">
-                    read more
-                  </Link> 
-                </div>
-              </div>
-            </div>
-          </div>
+            </div> 
+              )
+            } 
+          })
+        } 
         </Slider>
         <div className="control-arrows">
           <button className='main-slider-arrow prev-arr' style={{fontWeight : fontW}} onClick={() => sliderRef?.current?.slickPrev()}>Prev</button>
           <span className="slider-items-current"> {(currentIndex+1).toString().padStart(2,'0')} </span>
           <div className="slider-line"></div>
-          <span className="slider-items-count"> 06 </span>
+          <span className="slider-items-count"> 0{sliderCount} </span>
           <button className='main-slider-arrow next-arr' onClick={() => sliderRef.current?.slickNext()}>Next</button> 
         </div> 
       </div> 

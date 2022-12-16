@@ -4,51 +4,42 @@ import ReadMore from '../ReadMore';
 import SectionTitle from '../SectionTitle'; 
 import SeeAll from '../SeeAll';
 
-const CaseSection = () => {
+const CaseSection = (props) => {  
+
   return (
-    <div className='case-section'>
+    <div className='case-section'>  
         <div className="container">
-        <div className="important-title title-link-service">
-              <SectionTitle titleText="Cases" titleColor="#EF5324" />
-              <Link href="#"><SeeAll seeLink='See-all'/></Link>
-          </div>
+            <div className="important-title title-link-service">
+                <SectionTitle titleText={props.sectionTitle} titleColor="#EF5324" />
+                <Link href="#"><SeeAll seeLink='See-all'/></Link> 
+            </div>
           <div className="row">
             <div className="cases-box">
-                <div className="case-item">
-                    <Link href="#" className="case-img"> 
-                        <Image src={require('../../assets/img/caseimg1.png')} alt="caseImg" />
-                    </Link>
-                    <div className="case-text">
-                        <h1>
-                            COOPERATION WITH THE GEORGIAN
-                            NATIONAL COMPETITION AGENCY
-                        </h1>
-                        <div className="text__case_01">
-                            <div className="text">
-                                A management reporting system is a part of a management control system that provides business information. 
-                                The system is designed to assist
+                {
+                    props.dataCase.map((caseItem, index) =>  {
+                        if(index === 2){
+                            return
+                        }
+                         return(
+                            <div className="case-item" key={index}> 
+                                <Link href={caseItem.link} className="case-img"> 
+                                    <Image src={caseItem.image} alt="caseImg" /> 
+                                </Link>
+                                <div className="case-text">
+                                    <h1>
+                                    {caseItem.title}
+                                    </h1>
+                                    <div className="text__case_01">
+                                        <div className="text">
+                                            {caseItem.text}
+                                        </div>
+                                    </div>
+                                    <ReadMore ReadMoreUrl={caseItem.link} ReadText="Read More"/>
+                                </div>
                             </div>
-                        </div>
-                        <ReadMore ReadMoreUrl="#" ReadText="Read More"/>
-                    </div>
-                </div>
-                <div className="case-item">
-                    <Link href="#" className="case-img"> 
-                        <Image src={require('../../assets/img/caseimg2.png')} alt="caseImg" />
-                    </Link>
-                    <div className="case-text">
-                        <h1>
-                            Management reporting
-                        </h1>
-                        <div className="text__case_01">
-                            <div className="text">
-                                A management reporting system is A part of A management control system that provides business information. 
-                                The system is designed to assist members of the management by providing timely.
-                            </div>
-                        </div>
-                        <ReadMore ReadMoreUrl="#" ReadText="Read More"/>
-                    </div>
-                </div>
+                         )
+                    })
+                }
             </div>
           </div>
         </div>

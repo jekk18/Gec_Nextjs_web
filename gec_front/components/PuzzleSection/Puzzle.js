@@ -79,10 +79,10 @@ const Puzzle = () => {
   setDnD(DnD=> { 
     // console.log('draged to',draggedTo)
     return {
-    ...DnD,
-    draggedFrom: draggedTo,
+      ...DnD,
+      draggedFrom: draggedTo,
   }})
-  }
+}
   const onDrop = e => {
     // console.log('drop')
     // setList(DnD.updatedOrder)
@@ -96,11 +96,11 @@ const Puzzle = () => {
   const onDragLeave = e => {
     // console.log('drag leave')
     // setDnD({
-    //   ...DnD,
-    //   // draggedTo: null
-    // })
-  }
-  useEffect(() => {
+      //   ...DnD,
+      //   // draggedTo: null
+      // })
+    }
+    useEffect(() => {
     if(JSON.stringify(hiddenItemsOrder) === JSON.stringify(list)) {
       setIsHiddenItemsOrderSet(true)
     } else {
@@ -115,51 +115,50 @@ const Puzzle = () => {
         setDnD({...DnD,draggingX:e.clientX, draggingY:e.clientY})
       }
     }}> 
-    
+
          <style jsx>{`
        ul{
-        display: flex;
-        justify-content: end;
-        margin: 0;
-        padding: 0;
-        list-style: none;  
-        flex-wrap: wrap;
-       }
-       ul li{  
-        box-sizing: border-box; 
-        text-align: center;
-        cursor: grab;  
-        width: 258px;
-        height: 258px;
+         display: flex;
+         justify-content: end;
+         margin: 0;
+         padding: 0;
+         list-style: none;  
+         flex-wrap: wrap;
+        }
+        ul li{  
+          box-sizing: border-box; 
+          text-align: center;
+          cursor: grab;  
+          width: 258px;
+          height: 258px;
        }
        .puzzleimg{
-        width: 100%;
-       }
-    
-      `}</style>
+         width: 100%;
+        }
+        
+        `}</style>
 
         {isHiddenItemsOrderSet ? 
             <div className='succeed'>succeed</div>
         :
         <div className="puzzle-text-top">Move the tiles to assamble the puzzle</div>
-        }          
+      }          
       <ul className="puzzle-ul">
         {list.map((item, i) => (
           <li 
-            className="puzzle-li"
-            key={i}
-            draggable
-            data-position={i}
-            onDragStart={onDragStart}
-            onDragOver={onDragOver}
-            onDrop={onDrop}
-            onDragEnter={onDragEnter}
-            onDragLeave={onDragLeave}
+          className="puzzle-li"
+          key={i}
+          draggable
+          data-position={i}
+          onDragStart={onDragStart}
+          onDragOver={onDragOver}
+          onDrop={onDrop}
+          onDragEnter={onDragEnter}
+          onDragLeave={onDragLeave}
           > {  
             <Image src={item} style={{width: '100%', height: '100%', objectFit: 'fill'}} alt="img" />} </li>
-        ))}
+            ))}
       </ul>
-       
     </div>
   )
 }

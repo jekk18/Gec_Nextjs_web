@@ -1,5 +1,5 @@
 import Puzzle from './Puzzle'
-import SectionTitle from '../SectionTitle' 
+import SectionTitle from '../SectionTitle'  
 
 const PuzzleSection = () => {
   return (
