@@ -57,9 +57,9 @@ const Header = () => {
                               Insights
                            </Link>
                         </li>
-                        <li className={router.pathname == "/about" ? "active-link" : ""}>
-                           <Link href="/about" className='nav-link'>
-                              About Us
+                        <li className={router.pathname == "/team" ? "active-link" : ""}>
+                           <Link href="/team" className='nav-link'>
+                              Team
                            </Link>
                         </li>
                         <li className={router.pathname == "/career" ? "active-link" : ""}>

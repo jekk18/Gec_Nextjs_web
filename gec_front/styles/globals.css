@@ -40,6 +40,7 @@ a {
 .__header{
   height: 289px;
   position: fixed;
+  top: 0;
   z-index: 9;
   background: linear-gradient(to bottom, rgba(0,0,0,1), 60%, rgba(255,255,255,0.001));
   width: 100%; 

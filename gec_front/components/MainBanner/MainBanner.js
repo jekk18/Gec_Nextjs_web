@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Slider from "react-slick"; 
@@ -28,6 +28,8 @@ const MainBanner = (props) => {
     fontW = 400;
   }
 
+  let countSLider = 0;
+
   return (
     <div>
       <link
@@ -46,10 +48,8 @@ const MainBanner = (props) => {
       <div className="banner-slider-relative">
         <Slider ref={sliderRef} {...settings} > 
         {
-          props.bannersItem.map((item, i) => {  
-            useEffect(() => {
-              setSliderCount(++i);
-            }) 
+          props.bannerItems.map((item, i) => {  
+            countSLider = ++i; 
             if(item.bannerKey === '00'){ 
               return (
                   <div className="item" key={i}>
@@ -89,7 +89,7 @@ const MainBanner = (props) => {
           <button className='main-slider-arrow prev-arr' style={{fontWeight : fontW}} onClick={() => sliderRef?.current?.slickPrev()}>Prev</button>
           <span className="slider-items-current"> {(currentIndex+1).toString().padStart(2,'0')} </span>
           <div className="slider-line"></div>
-          <span className="slider-items-count"> 0{sliderCount} </span>
+          <span className="slider-items-count">{(countSLider).toString().padStart(2,'0')}</span>
           <button className='main-slider-arrow next-arr' onClick={() => sliderRef.current?.slickNext()}>Next</button> 
         </div> 
       </div> 
