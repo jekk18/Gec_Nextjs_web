@@ -39,3 +39,55 @@ const Paginate = ({
 };
 
 export default Paginate;
+
+
+
+// import React, { useState, useEffect } from 'react'
+// import { DateRangePicker } from 'react-date-range';
+// import 'react-date-range/dist/styles.css'; // import the styles
+// import 'react-date-range/dist/theme/default.css'; // import the theme
+
+// const Example = () => {
+//   const [dateRange, setDateRange] = useState({
+//     startDate: new Date(),
+//     endDate: new Date(),
+//     key: 'selection'
+//   });
+//   const [data, setData] = useState([]);
+//   const [filteredData, setFilteredData] = useState([]);
+
+//   useEffect(() => {
+//     setFilteredData(data.filter(item => {
+//       const itemDate = new Date(item.date);
+//       return itemDate >= dateRange.startDate && itemDate <= dateRange.endDate;
+//     }));
+//   }, [dateRange, data]);
+
+//   return (
+//     <div>
+//       <DateRangePicker
+//         ranges={[dateRange]}
+//         onChange={(ranges) => setDateRange(ranges.selection)}
+//       />
+//       <table>
+//         <tbody>
+//           {filteredData.map(item => (
+//             <tr key={item.id}>
+//               <td>{item.name}</td>
+//               <td>{item.date}</td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//     </div>
+//   )
+// }
+
+// export default Example
+
+
+ 
+
+
+
+
